@@ -1,34 +1,51 @@
 :root {
-    --primary-dark: #0B132B; /* Dark sky */
-    --accent-gold: #F4A261;  /* Desert sand */
-    --bg-light: #F8F9FA;
-    --text-main: #333333;
-    --card-bg: #FFFFFF;
+    /* Night Sky / Desert Palette */
+    --night-indigo: #0B1330; 
+    --horizon-amber: #E8A055;
+    --sand-dust: #C9B896;
+    --ember-red: #C1542C;
+    --starlight-white: #F5F2E8;
+    --deep-clay: #1E2A4A;
+    
+    /* Utility colors for dials and instruments */
+    --signal-green: #4ADE80;
+    --signal-amber: #FBBF24;
+    --signal-red: #F87171;
+    --starlight: #FFFFFF;
+    --ink-night: #060B1C;
+    --dune-gold: #D4AF37;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--bg-light);
-    color: var(--text-main);
+    background-color: var(--night-indigo);
+    color: var(--starlight-white);
+    font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
 }
 
 header {
-    background-color: var(--primary-dark);
-    color: white;
-    padding: 2rem 1rem;
+    background-color: var(--ink-night);
+    color: var(--horizon-amber);
+    padding: 3rem 1rem;
     text-align: center;
-    border-bottom: 4px solid var(--accent-gold);
+    border-bottom: 2px solid var(--deep-clay);
 }
 
 header p {
+    color: var(--sand-dust);
     margin-top: 10px;
-    opacity: 0.9;
+    font-size: 1.1rem;
 }
 
 main {
@@ -37,98 +54,372 @@ main {
     padding: 2rem 1rem;
 }
 
+/* --- Features Panel (Moon Tracker & Ask a Local) --- */
+.feature-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background-color: var(--deep-clay);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card h2 {
+    color: var(--horizon-amber);
+    margin-bottom: 4px;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    color: var(--sand-dust);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+input[type="date"],
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--sand-dust);
+    background: var(--ink-night);
+    color: var(--starlight-white);
+    font-family: 'Inter', sans-serif;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.mini-btn {
+    padding: 12px 20px;
+    background-color: var(--horizon-amber);
+    color: var(--night-indigo);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.mini-btn:hover {
+    opacity: 0.9;
+}
+
+/* Moon Layout */
+.moon-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    background: var(--ink-night);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.moon-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moon-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.moon-metric {
+    display: flex;
+    flex-direction: column;
+}
+
+.moon-metric span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--sand-dust);
+}
+
+.moon-metric strong {
+    font-size: 1.1rem;
+    color: var(--starlight-white);
+}
+
+#stargazing-quality[data-quality="excellent"],
+#stargazing-quality[data-quality="good"] { color: var(--signal-green); }
+#stargazing-quality[data-quality="fair"] { color: var(--signal-amber); }
+#stargazing-quality[data-quality="not-ideal"] { color: var(--signal-red); }
+
+.advice-box {
+    background: rgba(232, 160, 85, 0.1);
+    border-left: 3px solid var(--horizon-amber);
+    padding: 12px;
+    font-size: 0.9rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1rem;
+}
+
+.best-dates-container {
+    font-size: 0.9rem;
+}
+
+.best-dates {
+    margin-top: 8px;
+    list-style: none;
+}
+
+.best-dates li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--sand-dust);
+}
+
+.best-dates li .mono {
+    font-family: monospace;
+    color: var(--horizon-amber);
+}
+
+/* Ask a Local Layout */
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.ask-chip {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--sand-dust);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ask-chip:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--starlight-white);
+}
+
+.answer-box {
+    background: var(--ink-night);
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    min-height: 80px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.safety-note {
+    font-size: 0.8rem;
+    color: var(--sand-dust);
+    background: rgba(193, 84, 44, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid var(--ember-red);
+}
+
+/* --- Controls / Filters --- */
 .controls {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
 .filter-btn {
     padding: 10px 20px;
-    border: none;
-    background-color: #E9ECEF;
-    color: var(--text-main);
+    border: 1px solid var(--deep-clay);
+    background-color: var(--night-indigo);
+    color: var(--sand-dust);
     border-radius: 25px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 .filter-btn.active, .filter-btn:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
+    background-color: var(--deep-clay);
+    color: var(--horizon-amber);
+    border-color: var(--horizon-amber);
 }
 
+/* --- Grid & Cards --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
 }
 
 .card {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--primary-dark);
+    background-color: var(--deep-clay);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .card h3 {
-    color: var(--primary-dark);
-    margin-bottom: 5px;
+    color: var(--starlight-white);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.tag-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
 .tag {
-    display: inline-block;
-    padding: 4px 8px;
-    background-color: #E2E8F0;
-    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background-color: rgba(232, 160, 85, 0.15);
+    color: var(--horizon-amber);
+    font-size: 0.75rem;
     border-radius: 4px;
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.engineering-box {
-    background-color: #F1F5F9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
-    border-left: 3px solid var(--accent-gold);
+.tag svg {
+    width: 14px;
+    height: 14px;
 }
 
-.engineering-box h4 {
+.provider {
     font-size: 0.9rem;
-    margin-bottom: 10px;
-    color: var(--primary-dark);
+    color: var(--sand-dust);
+    margin-bottom: 12px;
 }
 
-.engineering-box p {
+.description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Engineering Box */
+.engineering-box {
+    background-color: var(--ink-night);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.eng-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.eng-header h4 {
+    color: var(--sand-dust);
     font-size: 0.85rem;
-    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.score {
+.dial-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dial-value {
+    fill: var(--starlight-white);
+    font-family: monospace;
+    font-size: 14px;
     font-weight: bold;
-    color: #16A34A;
+}
+
+.eng-row {
+    margin-bottom: 12px;
+}
+.eng-row:last-child {
+    margin-bottom: 0;
+}
+
+.eng-row-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--starlight-white);
+    margin-bottom: 4px;
+}
+
+.eng-row-note {
+    font-size: 0.8rem;
+    color: var(--sand-dust);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.instrument-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.instrument-bar-fill {
+    height: 100%;
+    border-radius: 2px;
 }
 
 .btn-contact {
     display: block;
     width: 100%;
-    padding: 10px;
-    background-color: var(--primary-dark);
-    color: white;
+    padding: 14px;
+    background-color: var(--horizon-amber);
+    color: var(--night-indigo);
     text-align: center;
     border: none;
-    border-radius: 5px;
-    margin-top: 15px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.2s;
 }
 
 .btn-contact:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
+    opacity: 0.9;
 }
