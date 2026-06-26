@@ -64,9 +64,7 @@ export function createBarSVG(value) {
 
 /**
  * Renders a stylised moon-phase disc as inline SVG, approximated from the
- * illumination percentage and waxing/waning direction. Not astronomically
- * exact — it's a visual read of the same numbers the tracker already
- * computes, not a second source of truth.
+ * illumination percentage and waxing/waning direction. 
  */
 export function createMoonPhaseSVG(illuminationPercent, isWaxing, size = 120) {
     const r = size / 2 - 4;
@@ -87,11 +85,11 @@ export function createMoonPhaseSVG(illuminationPercent, isWaxing, size = 120) {
                     <circle cx="${cx}" cy="${cy}" r="${r}" />
                 </clipPath>
             </defs>
-            <circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--starlight)" opacity="0.92" />
+            <circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--text-primary)" opacity="0.92" />
             <g clip-path="url(#${clipId})">
-                <circle cx="${shadowCx}" cy="${cy}" r="${r}" fill="var(--ink-night)" />
+                <circle cx="${shadowCx}" cy="${cy}" r="${r}" fill="var(--bg-base)" />
             </g>
-            <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--dune-gold)" stroke-width="1" opacity="0.5" />
+            <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--accent-primary)" stroke-width="1" opacity="0.5" />
         </svg>
     `;
 }
