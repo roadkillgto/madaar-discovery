@@ -6,7 +6,7 @@
     <title>Mada'ar | Al Qua'a Discovery Hub</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600&family=Inter:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
     </style>
 </head>
 <body>
@@ -22,33 +22,19 @@
             <div class="feature-card" id="moon-tracker-card">
                 <h2>Moon Cycle Tracker</h2>
                 <p class="subtitle">Check moon illumination to plan the best stargazing nights.</p>
-                
                 <div class="input-group">
                     <label for="visit-date"><strong>Planned visit date:</strong></label>
                     <input type="date" id="visit-date">
                 </div>
-
                 <div class="moon-grid">
-                    <div class="moon-visual" id="moon-disc">
-                        </div>
+                    <div class="moon-visual" id="moon-disc"></div>
                     <div class="moon-metrics">
-                        <div class="moon-metric">
-                            <span>Moon Phase</span>
-                            <strong id="moon-phase">-</strong>
-                        </div>
-                        <div class="moon-metric">
-                            <span>Illumination</span>
-                            <strong id="moon-illumination">-</strong>
-                        </div>
-                        <div class="moon-metric">
-                            <span>Quality</span>
-                            <strong id="stargazing-quality" data-quality="">-</strong>
-                        </div>
+                        <div class="moon-metric"><span>Moon Phase</span><strong id="moon-phase">-</strong></div>
+                        <div class="moon-metric"><span>Illumination</span><strong id="moon-illumination">-</strong></div>
+                        <div class="moon-metric"><span>Quality</span><strong id="stargazing-quality" data-quality="">-</strong></div>
                     </div>
                 </div>
-
                 <p id="moon-advice" class="advice-box"></p>
-
                 <div class="best-dates-container">
                     <strong>Upcoming darker nights:</strong>
                     <ul id="best-dates-list" class="best-dates"></ul>
@@ -58,35 +44,23 @@
             <div class="feature-card" id="ask-local-card">
                 <h2>Ask a Local</h2>
                 <p class="subtitle">Learn simple local tips about Al Qua'a before visiting.</p>
-
                 <div class="input-group">
                     <input type="text" id="local-question" placeholder="Example: Do I need a 4x4?">
                     <button class="mini-btn" id="ask-local-btn">Ask</button>
                 </div>
-
                 <div class="chip-container">
                     <button class="ask-chip" data-question="What is the best time to arrive?">Best arrival time</button>
                     <button class="ask-chip" data-question="What should I bring?">What to bring</button>
                     <button class="ask-chip" data-question="Do I need a 4x4?">Need a 4x4?</button>
                     <button class="ask-chip" data-question="How do I protect the dark sky?">Dark-sky rules</button>
-                    <button class="ask-chip" data-question="What farm rules should I follow?">Farm rules</button>
                 </div>
-
-                <div class="answer-box" id="local-answer">
-                    Type a question or choose a quick question above.
-                </div>
-
-                <div class="safety-note">
-                    <strong>Note:</strong> Ask a Local is for general visitor guidance only. For emergencies, visitors must contact official emergency services.
-                </div>
+                <div class="answer-box" id="local-answer">Type a question or choose a quick question above.</div>
             </div>
         </section>
 
-        <section class="controls" id="filter-controls">
-            </section>
+        <section class="controls" id="filter-controls"></section>
 
-        <section id="hub-grid" class="grid-container">
-            </section>
+        <section id="hub-grid" class="grid-container"></section>
     </main>
 
     <script type="module" src="main.js"></script>
