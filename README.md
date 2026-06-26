@@ -9,7 +9,7 @@
 
 ## Project Summary
 
-**Mada'ar** is a no-code Astro-Farm Opportunity Hub designed for Al Qua'a, Al Ain. It connects local camel farm owners and rural residents with safe, low-impact stargazing tourism opportunities.
+**Mada'ar** is an Astro-Farm Opportunity Hub designed for Al Qua'a, Al Ain. It connects local camel farm owners and rural residents with safe, low-impact stargazing tourism opportunities.
 
 Al Qua'a has two strong local advantages: camel farming and dark-sky stargazing. However, these strengths are not connected in a simple, organized, and community-led way. Mada'ar helps local residents turn underused farm space, local knowledge, hospitality, and services into income opportunities while giving visitors a safer and more respectful way to discover stargazing experiences.
 
