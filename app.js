@@ -51,6 +51,19 @@ const madaarData = [
             terrain: "Elevated dune crest, requires temporary matting for stability.",
             infrastructure: "Needs temporary wind fencing and portable sanitary units. No permanent footprint."
         }
+    },
+    {
+        id: "site_05",
+        category: "Community Board",
+        name: "Dark Sky Protocol: Perseid Meteor Shower",
+        provider: "Al Qua'a Farmers Cooperative",
+        description: "Coordination alert for August 12th. Participating farms agree to turn off non-essential perimeter lighting from 11 PM to 3 AM to maximize visibility for local stargazing events and protect the dark sky.",
+        civil_score: 98,
+        engineering: {
+            access: "N/A - Area-wide protocol.",
+            terrain: "Affects a 15km radius of cooperating farms.",
+            infrastructure: "Requires manual bypass of automated solar floodlights on farm perimeters."
+        }
     }
 ];
 
