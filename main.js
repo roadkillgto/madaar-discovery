@@ -45,19 +45,19 @@ function showLocalAnswer(questionText) {
 function createCard(data) {
     const categoryConfig = CATEGORIES[data.category];
     const icon = categoryConfig ? categoryConfig.icon : "";
+    const roadLabel = data.roadType ? ROAD_TYPES[data.roadType] : null;
     
     return `
         <div class="card">
             <h3>${escapeHTML(data.name)}</h3>
             <div class="tag-row"><span class="tag">${icon} ${escapeHTML(data.category)}</span></div>
+            ${roadLabel ? `<div class="tag-row"><span class="tag road-tag" data-road="${escapeHTML(data.roadType)}">🚙 ${escapeHTML(roadLabel)}</span></div>` : ""}
             <p class="provider"><strong>By:</strong> ${escapeHTML(data.provider)}</p>
             <p class="description">${escapeHTML(data.description)}</p>
-
             <div class="status-box">
                 <span class="status-indicator"></span> 
                 ${escapeHTML(data.status)}
             </div>
-
             ${data.contactLink === "community-board"
                 ? `<button class="btn-contact action-btn" data-link="community-board">View Community Board</button>`
                 : `<div class="contact-row">
@@ -68,7 +68,6 @@ function createCard(data) {
         </div>
     `;
 }
-
 function renderCards(filterCategory = "all") {
     if (!grid) return;
     grid.innerHTML = "";
