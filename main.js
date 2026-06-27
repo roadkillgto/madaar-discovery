@@ -89,31 +89,14 @@ function renderCards(filterCategory = "all") {
 
     grid.innerHTML = filteredData.map(item => createCard(item)).join("");
 
-// Modern Button Interaction Logic
+    // Modern Button Interaction Logic
     document.querySelectorAll(".action-btn").forEach(button => {
         button.addEventListener("click", (e) => {
             const btn = e.currentTarget;
-            const link = btn.getAttribute("data-link");
-
-            if (link === "community-board") {
-                const notice = btn.closest('.card').querySelector('.community-notice');
-                const isOpen = notice.style.display !== 'none';
-                notice.style.display = isOpen ? 'none' : 'block';
-                btn.textContent = isOpen ? '📋 View Protocol' : '✕ Close';
-                return;
-            }
-
-            const originalText = btn.textContent;
-            btn.textContent = "Connecting...";
-            btn.style.backgroundColor = "var(--signal-green)";
-            btn.style.color = "#000";
-            btn.style.borderColor = "var(--signal-green)";
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.backgroundColor = "";
-                btn.style.color = "";
-                btn.style.borderColor = "";
-            }, 800);
+            const notice = btn.closest('.card').querySelector('.community-notice');
+            const isOpen = notice.style.display !== 'none';
+            notice.style.display = isOpen ? 'none' : 'block';
+            btn.textContent = isOpen ? '📋 View Protocol' : '✕ Close';
         });
     });
 }
