@@ -71,7 +71,105 @@ Visit the working prototype here:
 **https://roadkillgto.github.io/madaar-discovery/**
 
 ---
+## Context and Evidence
 
+Mada'ar is based on a real local opportunity in Al Qua'a: the area is already known for dark-sky stargazing, visitors are already paying for astronomy experiences there, and camel farming is part of the region's local identity.
+
+### 1. Al Qua'a is already a recognised dark-sky destination
+
+Al Qua'a is widely described as one of the darkest accessible stargazing areas in the UAE. Astronomy and travel sources describe it as a remote desert location with very low light pollution, clear views of the Milky Way, and strong appeal for astrophotographers and stargazers.[^1][^2]
+
+This supports Mada'ar because the destination already has stargazing value. The app does not need to create demand from zero; it organises the existing opportunity and connects it to local farm hosts.
+
+### 2. Organised astronomy demand already exists
+
+In June 2025, Dubai Astronomy Group hosted a Milky Way observation event at Al Qua'a, including sky mapping, astrophotography activities, and telescope-assisted viewing.[^3]
+
+This shows that Al Qua'a already attracts organised astronomy activity. Mada'ar builds on this by helping local residents and camel farm owners participate in that demand.
+
+### 3. Paid stargazing tours already exist
+
+Public tour listings show Al Qua'a overnight stargazing packages priced around **400 AED per person**, with a minimum group size of four.[^4] Other Al Qua'a overnight stargazing tours are listed at around **450 AED per person**.[^5]
+
+This proves that visitors are already willing to pay for Al Qua'a stargazing experiences. Mada'ar targets the gap between that existing visitor demand and local farm owners who may have land, hospitality, and local knowledge but no simple digital presence.
+
+### 4. Camel farming is locally relevant
+
+Camels have strong cultural and economic importance in Abu Dhabi and Al Ain. Visit Abu Dhabi describes the Al Ain Camel Market as a traditional and active place connected to local camel heritage.[^6]
+
+This supports Mada'ar's focus on camel farms. The project connects a real local livelihood and heritage asset with a real visitor activity: stargazing.
+
+### 5. Offline-first design is justified
+
+Mada'ar is built as an offline-first PWA because visitors may travel into rural desert areas where mobile data can be less reliable than in cities. Visitors can load the website before leaving, then still access listings, moon information, local guidance, safety notes, and emergency numbers in the desert.
+
+### 6. Sustainable rural tourism is a growing opportunity
+
+Well-managed tourism can spread income beyond cities into rural communities and expand markets for local producers.[^7] Ecotourism is also a growing market in the Middle East and Africa region.[^8]
+
+Mada'ar fits this trend by promoting low-impact, community-led tourism that uses existing local assets instead of requiring large new infrastructure.
+
+---
+
+## Local Income Estimate
+
+Based on public Al Qua'a tour prices, existing stargazing experiences are already being sold for around **400–450 AED per person**.[^4][^5]
+
+Mada'ar proposes a lower-cost, local-host model:
+
+| Assumption | Value |
+|---|---:|
+| Local farm host price per visitor | 100–150 AED |
+| Visitors per hosted dark-sky night | 10 visitors |
+| Income per hosted night | 1,000–1,500 AED |
+| Dark-sky weekends per month | 2 |
+| Active season | 6 months |
+| Estimated seasonal income per farm host | 12,000–18,000 AED |
+
+This is a conservative estimate and not a guaranteed result. It shows that even a small part of existing stargazing demand could create meaningful extra income for local farm hosts.
+
+The key point is that the farm owner already has the main assets: land, location, local knowledge, and hospitality. Mada'ar helps turn those assets into a structured opportunity with minimal upfront cost.
+
+---
+
+## Why This Evidence Matters
+
+The evidence supports four important claims:
+
+1. **The destination is real:** Al Qua'a is already known for dark-sky stargazing.
+2. **The market is real:** Visitors already pay for Al Qua'a astronomy experiences.
+3. **The local asset is real:** Camel farms and camel culture are part of the Al Ain region.
+4. **The design choice is realistic:** Offline-first access is useful for rural desert trips.
+
+Mada'ar does not invent a new market. It gives local residents a simple way to participate in a market that already exists.
+
+---
+
+## Sources
+
+[^1]: Hammer Mindset — Dark Sky Spots in UAE  
+https://hammermindset.com/dark-sky-spots-in-uae-your-noc-tourism-retreat/
+
+[^2]: Arabian Wanderers — Al Quaa Milky Way Spot  
+https://www.arabianwanderers.com/al-quaa-milky-way-spot-everything-you-need-to-know-before-visiting
+
+[^3]: Travels Dubai — Milky Way observation in Al Qua'a  
+https://www.travelsdubai.com/18-Jun-2025/where-to-see-the-milky-way-in-uae-this-weekend
+
+[^4]: Abu Dhabi Desert Safari — Al Quaa Desert Milky Way Stargazing Overnight Camping  
+https://abudhabi-desertsafari.com/en/al-quaa-desert-milky-way-stargazing-overnight-camping
+
+[^5]: Desert Holiday Tours — Overnight Camping in Al Quaa  
+https://www.desertholidaytours.com/tours/overnight-camping-in-al-quaa-milky-way-desert-abu-dhabi
+
+[^6]: Visit Abu Dhabi — Al Ain Camel Market  
+https://visitabudhabi.ae/en/things-to-do/culture/heritage/al-ain-camel-market
+
+[^7]: World Bank — Tourism  
+https://www.worldbank.org/ext/en/topic/tourism
+
+[^8]: Fortune Business Insights — Ecotourism Market  
+https://www.fortunebusinessinsights.com/ecotourism-market-108700
 ## Screenshots
 
 Screenshots are stored in the `/assets` folder.
