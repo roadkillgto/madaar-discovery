@@ -14,40 +14,6 @@ export function escapeHTML(value) {
         .replaceAll("'", "&#039;");
 }
 
-/** Maps a 0–100 rating to a tier name + CSS color variable. Used everywhere
- *  a number needs to read as "good / fair / weak" at a glance. */
-export function ratingTier(value) {
-    if (value >= 80) return { label: "Strong", colorVar: "--signal-green" };
-    if (value >= 55) return { label: "Workable", colorVar: "--signal-amber" };
-    return { label: "Limited", colorVar: "--signal-red" };
-}
-
-/**
- * Builds a small circular progress dial as an inline SVG string.
- * Used for civil-feasibility scores on listing cards. Pure function:
- * give it a number, get back markup — no DOM access, easy to test or reuse.
- */
-export function createDialSVG(value, { size = 56, stroke = 6, label = "" } = {}) {
-    const radius = (size - stroke) / 2;
-    const circumference = 2 * Math.PI * radius;
-    const clamped = Math.max(0, Math.min(100, value));
-    const offset = circumference * (1 - clamped / 100);
-    const tier = ratingTier(clamped);
-    const center = size / 2;
-
-    return `
-        <svg class="dial" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="${escapeHTML(label)} ${clamped} out of 100">
-            <circle class="dial-track" cx="${center}" cy="${center}" r="${radius}" stroke-width="${stroke}" fill="none" />
-            <circle class="dial-fill" cx="${center}" cy="${center}" r="${radius}" stroke-width="${stroke}" fill="none"
-                stroke="var(${tier.colorVar})"
-                stroke-dasharray="${circumference}"
-                stroke-dashoffset="${offset}"
-                transform="rotate(-90 ${center} ${center})" />
-            <text x="${center}" y="${center + 1}" class="dial-value" text-anchor="middle" dominant-baseline="middle">${clamped}</text>
-        </svg>
-    `;
-}
-
 /**
  * Builds a thin horizontal "instrument" bar — used for the Access / Terrain /
  * Infrastructure sub-readouts inside a listing card.
