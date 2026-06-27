@@ -78,6 +78,13 @@ export function createMoonPhaseSVG(illuminationPercent, isWaxing, size = 120) {
     const shadowCx = cx + direction * shadowOffset;
     const clipId = `moonclip-${Math.round(Math.random() * 100000)}`;
 
+    // Resolve actual colors instead of relying on var() inside the SVG
+    // presentation attributes, Edge doesn't reliably resolve those here.
+    const computed = getComputedStyle(document.body);
+    const litColor = (computed.getPropertyValue('--text-primary') || '#F8FAFC').trim();
+    const shadowColor = (computed.getPropertyValue('--bg-base') || '#070B14').trim();
+    const ringColor = (computed.getPropertyValue('--accent-primary') || '#E8A055').trim();
+
     return `
         <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="Moon phase, ${Math.round(illuminationPercent)} percent illuminated">
             <defs>
@@ -85,11 +92,11 @@ export function createMoonPhaseSVG(illuminationPercent, isWaxing, size = 120) {
                     <circle cx="${cx}" cy="${cy}" r="${r}" />
                 </clipPath>
             </defs>
-            <circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--text-primary)" opacity="0.92" />
+            <circle cx="${cx}" cy="${cy}" r="${r}" fill="${litColor}" opacity="0.92" />
             <g clip-path="url(#${clipId})">
-                <circle cx="${shadowCx}" cy="${cy}" r="${r}" fill="var(--bg-base)" />
+                <circle cx="${shadowCx}" cy="${cy}" r="${r}" fill="${shadowColor}" />
             </g>
-            <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--accent-primary)" stroke-width="1" opacity="0.5" />
+            <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${ringColor}" stroke-width="1" opacity="0.5" />
         </svg>
     `;
 }
