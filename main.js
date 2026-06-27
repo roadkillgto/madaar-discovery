@@ -1,4 +1,4 @@
-import { CATEGORIES } from "./config.js";
+import { CATEGORIES, ROAD_TYPES } from "./config.js";
 import { madaarSites, localGuidance } from "./data.js";
 import { initMoonPanel } from "./moon.js";
 
