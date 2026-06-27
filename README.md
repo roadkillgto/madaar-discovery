@@ -431,7 +431,7 @@ This is a hackathon MVP, so it has limits:
 
 ## Demo Video
 
-[ADD DEMO VIDEO LINK HERE]
+(https://drive.google.com/file/d/16e1vku2ELnmG-FZEYPhzp1yJ8A02dWeV/view?usp=drive_link)
 
 ---
 
