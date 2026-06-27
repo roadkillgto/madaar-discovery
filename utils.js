@@ -1,10 +1,3 @@
-// ----------------------------------------------------------------------------
-// utils.js — small, dependency-free helpers shared by every other module.
-// Nothing in here knows about Mada'ar's data or DOM structure — keep it that
-// way, so it never has to change when listings or features change.
-// ----------------------------------------------------------------------------
-
-/** Escapes a value for safe insertion into innerHTML. */
 export function escapeHTML(value) {
     return String(value)
         .replaceAll("&", "&amp;")
@@ -14,24 +7,7 @@ export function escapeHTML(value) {
         .replaceAll("'", "&#039;");
 }
 
-/**
- * Builds a thin horizontal "instrument" bar — used for the Access / Terrain /
- * Infrastructure sub-readouts inside a listing card.
- */
-export function createBarSVG(value) {
-    const clamped = Math.max(0, Math.min(100, value));
-    const tier = ratingTier(clamped);
-    return `
-        <div class="instrument-bar" role="img" aria-label="${clamped} out of 100">
-            <div class="instrument-bar-fill" style="width:${clamped}%; background:var(${tier.colorVar})"></div>
-        </div>
-    `;
-}
 
-/**
- * Renders a stylised moon-phase disc as inline SVG, approximated from the
- * illumination percentage and waxing/waning direction. 
- */
 export function createMoonPhaseSVG(illuminationPercent, isWaxing, size = 120) {
     const r = size / 2 - 4;
     const cx = size / 2;
@@ -44,8 +20,7 @@ export function createMoonPhaseSVG(illuminationPercent, isWaxing, size = 120) {
     const shadowCx = cx + direction * shadowOffset;
     const clipId = `moonclip-${Math.round(Math.random() * 100000)}`;
 
-    // Resolve actual colors instead of relying on var() inside the SVG
-    // presentation attributes, Edge doesn't reliably resolve those here.
+
     const computed = getComputedStyle(document.body);
     const litColor = (computed.getPropertyValue('--text-primary') || '#F8FAFC').trim();
     const shadowColor = (computed.getPropertyValue('--bg-base') || '#070B14').trim();
