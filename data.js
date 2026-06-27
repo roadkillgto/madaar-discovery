@@ -6,6 +6,7 @@ export const madaarSites = [
         provider: "Al Mansouri Camel Farm",
         description: "Overnight stargazing plot away from town lights. Includes traditional majlis seating and fresh camel milk in the morning.",
         status: "Available Tonight",
+        roadType: "4x4-recommended",
         contactLink: "https://wa.me/971500000001", phone: "+971500000001"
     },
     {
@@ -15,6 +16,7 @@ export const madaarSites = [
         provider: "Oasis Heritage Farms",
         description: "Learn how a working camel farm operates. Good for families, students, and visitors interested in local heritage.",
         status: "Booking for Weekend",
+        roadType: "car",
         contactLink: "https://wa.me/971500000002", phone: "+971500000002"
     },
     {
