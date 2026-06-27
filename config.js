@@ -1,18 +1,5 @@
 // ----------------------------------------------------------------------------
 // config.js — the single source of truth for every category in Mada'ar.
-//
-// WHY THIS FILE EXISTS:
-// The old version had filter buttons hand-typed in index.html and category
-// strings hand-typed in the data file, separately. They drifted apart and a
-// whole filter button silently returned zero results. This file removes that
-// failure mode: filter buttons, icons, and grouping are all GENERATED from
-// this one object. To add a new category, add one entry here — nothing in
-// index.html, render.js, or data.js needs to change.
-//
-// `group` controls which section of the page an item appears in:
-//   "experience" -> bookable listings shown in the survey grid
-//   "tool"       -> community tools shown in the Community Help panel
-// ----------------------------------------------------------------------------
 
 export const CATEGORIES = {
     "Astrotourism": {
@@ -47,9 +34,11 @@ export const CATEGORIES = {
     }
 };
 
-// Thin geometric line icons, drawn to match the survey/blueprint look used
-// throughout the UI. Kept here (not as image files) so there is nothing to
-// upload, host, or break a path to.
+export const ROAD_TYPES = {
+    "car": "Normal Car OK",
+    "4x4-recommended": "4x4 Recommended",
+    "4x4-required": "4x4 Required"
+};
 
 function iconStar() {
     return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l1.8 5.6L19.5 9l-4.6 3.5L16.5 18 12 14.6 7.5 18l1.6-5.5L4.5 9l5.7-0.4L12 3z" stroke-linejoin="round"/></svg>`;
