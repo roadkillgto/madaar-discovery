@@ -108,4 +108,20 @@ export function initMoonPanel() {
     dateInput.valueAsDate = new Date();
     dateInput.addEventListener("change", render);
     render();
+
+    // Hero verdict — tonight's result surfaced at the top of the page
+const verdictEl = document.getElementById("verdict-text");
+const verdictSub = document.getElementById("verdict-sub");
+if (verdictEl && verdictSub) {
+    const tonight = getMoonInfo(new Date());
+    const colors = {
+        "Excellent": "#10B981",
+        "Good": "#10B981",
+        "Fair": "#F59E0B",
+        "Not ideal": "#EF4444"
+    };
+    verdictEl.textContent = tonight.quality;
+    verdictEl.style.color = colors[tonight.quality] || "#F8FAFC";
+    verdictSub.textContent = `${tonight.illumination}% illumination · ${tonight.phase}`;
+}
 }
