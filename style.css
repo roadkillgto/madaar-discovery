@@ -109,3 +109,23 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
 /* --- Night Vision Mode --- */
 body.night-vision { --bg-base:#0D0000; --bg-surface:#1A0000; --bg-elevated:#2A0000; --accent-primary:#FF3B3B; --accent-glow:rgba(255,59,59,0.15); --text-primary:#FF6B6B; --text-secondary:#CC3333; --text-tertiary:#882222; --signal-green:#FF3B3B; --signal-amber:#FF3B3B; }
 body.night-vision #night-vision-btn { background:#FF3B3B; color:#000; border-color:#FF3B3B; }
+
+/* --- Emergency Panel: compact bottom bar on mobile --- */
+@media (max-width: 640px) {
+    body { padding-bottom: 90px; }
+    #emergency-panel {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: 0 !important;
+        transform: none !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px 10px !important;
+        border-radius: 16px 16px 0 0 !important;
+        padding: 10px 12px !important;
+    }
+    #emergency-panel span:first-child { grid-column: 1 / -1; text-align: center; }
+    #emergency-panel a { text-align: center; font-size: 0.8rem !important; }
+}
