@@ -442,9 +442,9 @@ This is a hackathon MVP, so it has limits:
 
 **Team Members:**
 
-- Mohamed Elbashir — Engineering feasibility, project planning, and presentation
-- Mohamed Aymen — Website prototype, data structure, and user flow
-- Shahmir Khan — Documentation, validation, financial plan, and demo video
+- Mohamed Elbashir 
+- Mohamed Aymen 
+- Shahmir Khan 
 
 ---
 
