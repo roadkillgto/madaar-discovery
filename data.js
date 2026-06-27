@@ -6,7 +6,7 @@ export const madaarSites = [
         provider: "Al Mansouri Camel Farm",
         description: "Overnight stargazing plot away from town lights. Includes traditional majlis seating and fresh camel milk in the morning.",
         status: "Available Tonight",
-        contactLink: "https://wa.me/971500000001"
+        contactLink: "https://wa.me/971500000001", phone: "+971500000001"
     },
     {
         id: "site_02",
@@ -15,7 +15,7 @@ export const madaarSites = [
         provider: "Oasis Heritage Farms",
         description: "Learn how a working camel farm operates. Good for families, students, and visitors interested in local heritage.",
         status: "Booking for Weekend",
-        contactLink: "https://wa.me/971500000002"
+        contactLink: "https://wa.me/971500000002", phone: "+971500000002"
     },
     {
         id: "site_03",
@@ -24,7 +24,7 @@ export const madaarSites = [
         provider: "Al Qua'a Local Assistance Network",
         description: "Guidance and assistance for visitors who may get stuck in sand near stargazing areas. Does not replace official emergency numbers.",
         status: "Active / On Call",
-        contactLink: "https://wa.me/971500000003"
+        contactLink: "https://wa.me/971500000003", phone: "+971500000003"
     },
     {
         id: "site_04",
