@@ -54,15 +54,17 @@ function createCard(data) {
             ${roadLabel ? `<div class="tag-row"><span class="tag road-tag" data-road="${escapeHTML(data.roadType)}">🚙 ${escapeHTML(roadLabel)}</span></div>` : ""}
             <p class="provider"><strong>By:</strong> ${escapeHTML(data.provider)}</p>
             <p class="description">${escapeHTML(data.description)}</p>
+            ${data.capacity ? `<p class="provider"><strong>Capacity:</strong> ${escapeHTML(data.capacity)}</p>` : ""}
             <div class="status-box">
                 <span class="status-indicator"></span> 
                 ${escapeHTML(data.status)}
             </div>
             ${data.contactLink === "community-board"
                 ? `<button class="btn-contact action-btn" data-link="community-board">View Community Board</button>`
-                : `<div class="contact-row">
+               : `<div class="contact-row">
                     <a href="${escapeHTML(data.contactLink)}" target="_blank" class="btn-contact btn-whatsapp">📲 WhatsApp</a>
                     <a href="sms:${escapeHTML(data.phone)}" class="btn-contact btn-sms">💬 SMS</a>
+                    ${data.mapLink ? `<a href="${escapeHTML(data.mapLink)}" target="_blank" class="btn-contact btn-map">📍 Map</a>` : ""}
                    </div>`
             }
         </div>
