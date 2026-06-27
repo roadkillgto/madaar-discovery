@@ -1,7 +1,7 @@
 # Mada'ar (مدار) — Al Qua'a Discovery Hub
 
 **Team:** The Fellas  
-**Team Members:** Mohamed Elbashir, Mohamed Aymen, Shahmir Khan  
+**Team Members:** Mohamed Elbashir, Mohammed Ayman, Shahmir Khan  
 **Hackathon:** Tatweer Hackathon 2026  
 **Challenge:** Challenge 4 — Connecting residents to services, opportunities and events  
 **Live Website:** https://roadkillgto.github.io/madaar-discovery/  
@@ -442,8 +442,8 @@ This is a hackathon MVP, so it has limits:
 
 **Team Members:**
 
-- Mohamed Elbashir 
-- Mohamed Aymen 
+- Mohamed Elbashir Abdalla
+- Mohammed Ayman 
 - Shahmir Khan 
 
 ---
