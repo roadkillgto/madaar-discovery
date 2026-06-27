@@ -138,3 +138,16 @@ body.night-vision #night-vision-btn { background:#FF3B3B; color:#000; border-col
 
 /* --- Map Button --- */
 .btn-map:hover { background-color: var(--signal-amber); color: #000; border-color: var(--signal-amber); }
+
+/* --- RTL Fixes --- */
+[dir="rtl"] .advice-box {
+    border-left: none;
+    border-right: 3px solid var(--accent-primary);
+    border-radius: 8px 0 0 8px;
+}
+
+[dir="rtl"] .community-notice {
+    border-left: none !important;
+    border-right: 3px solid var(--accent-primary) !important;
+    border-radius: 8px 0 0 8px !important;
+}
