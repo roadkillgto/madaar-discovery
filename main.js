@@ -58,7 +58,13 @@ function createCard(data) {
                 ${escapeHTML(data.status)}
             </div>
 
-            <button class="btn-contact action-btn" data-link="${escapeHTML(data.contactLink)}">Connect via Network</button>
+            ${data.contactLink === "community-board"
+                ? `<button class="btn-contact action-btn" data-link="community-board">View Community Board</button>`
+                : `<div class="contact-row">
+                    <a href="${escapeHTML(data.contactLink)}" target="_blank" class="btn-contact btn-whatsapp">📲 WhatsApp</a>
+                    <a href="sms:${escapeHTML(data.phone)}" class="btn-contact btn-sms">💬 SMS</a>
+                   </div>`
+            }
         </div>
     `;
 }
