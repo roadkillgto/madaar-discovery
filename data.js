@@ -50,7 +50,7 @@ export const localGuidance = [
         answer: "Arrive 30 to 45 minutes before sunset. That gives you time to find the location safely, park properly, meet the host, and settle in before the sky gets dark."
     },
     {
-        keywords: ["bring", "carry", "need", "items", "pack"],
+        keywords: ["bring", "carry", "items", "pack"],
         question: "What should I bring?",
         answer: "Water, a charged phone, warm clothing for late night, a power bank, snacks, and a red-light torch if you have one. Avoid bright white lights — they reduce night vision for everyone nearby."
     },
