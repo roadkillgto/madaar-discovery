@@ -1,0 +1,10 @@
+{
+  "name": "Mada'ar — Al Qua'a Discovery",
+  "short_name": "Mada'ar",
+  "description": "Offline-first guide to camel farm astrotourism in Al Qua'a, Al Ain, UAE.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#070B14",
+  "theme_color": "#E8A055",
+  "orientation": "any"
+}
