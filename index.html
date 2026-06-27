@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +8,66 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
     </style>
-      <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#E8A055">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#E8A055">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1>Mada'ar (The Orbit)</h1>
-            <p>Connecting Al Qua'a: Eco-Tourism, Local Farms & Community Services</p>
-            <div id="tonight-verdict" style="margin-top: 2rem;">
-  <div id="verdict-label" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; color:#94A3B8; margin-bottom:0.5rem;">Tonight's Stargazing</div>
-  <div id="verdict-text" style="font-size:3rem; font-weight:800; letter-spacing:-0.03em;"></div>
-  <div id="verdict-sub" style="font-size:1rem; color:#94A3B8; margin-top:0.4rem;"></div>
-</div>
+
+            <!-- Top bar: language + night vision toggles -->
+            <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:1.5rem;">
+                <button id="lang-btn" onclick="toggleLang()" style="background:transparent; border:1px solid var(--glass-border); color:var(--text-secondary); padding:8px 16px; border-radius:20px; cursor:pointer; font-size:0.8rem; font-weight:700;">عربي</button>
+                <button id="night-vision-btn" onclick="document.body.classList.toggle('night-vision'); this.textContent = document.body.classList.contains('night-vision') ? '☀️ Normal Mode' : '🔴 Night Vision'" style="background:transparent; border:1px solid #EF4444; color:#EF4444; padding:8px 16px; border-radius:20px; cursor:pointer; font-size:0.8rem; font-weight:700;">🔴 Night Vision</button>
+            </div>
+
+            <h1 data-en="Mada'ar (The Orbit)" data-ar="مدار (المدار)">Mada'ar (The Orbit)</h1>
+            <p data-en="Connecting Al Qua'a: Eco-Tourism, Local Farms & Community Services" data-ar="ربط القعا: السياحة البيئية والمزارع المحلية والخدمات المجتمعية">Connecting Al Qua'a: Eco-Tourism, Local Farms & Community Services</p>
+
+            <!-- Tonight's verdict -->
+            <div id="tonight-verdict" style="margin-top:2rem;">
+                <div id="verdict-label" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; color:#94A3B8; margin-bottom:0.5rem;" data-en="Tonight's Stargazing" data-ar="مراقبة النجوم الليلة">Tonight's Stargazing</div>
+                <div id="verdict-text" style="font-size:3rem; font-weight:800; letter-spacing:-0.03em;"></div>
+                <div id="verdict-sub" style="font-size:1rem; color:#94A3B8; margin-top:0.4rem;"></div>
+            </div>
+
+            <!-- Is It Dark Yet? — device clock only, no internet -->
+            <div id="dark-indicator" style="margin-top:1.25rem; display:inline-flex; align-items:center; gap:10px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); border-radius:30px; padding:10px 20px;">
+                <span id="dark-dot" style="width:10px; height:10px; border-radius:50%; background:#94A3B8; display:inline-block; flex-shrink:0;"></span>
+                <span id="dark-status" style="font-weight:700; font-size:0.9rem;">Checking...</span>
+                <span id="dark-desc" style="font-size:0.8rem; color:#94A3B8;">—</span>
+            </div>
+
+            <!-- Night vision explanation -->
+            <div style="font-size:0.75rem; color:#64748B; margin-top:0.75rem;">
+                White light ruins your eyes' adjustment to the dark. Switch to red to protect it.
+            </div>
+
         </div>
     </header>
 
     <main>
+
+        <!-- Before You Go -->
+        <div style="background:var(--bg-surface); border:1px solid var(--glass-border); border-radius:16px; padding:20px 28px; margin-bottom:2rem;">
+            <div style="font-weight:800; color:var(--accent-primary); margin-bottom:12px; font-size:1rem;" data-en="📋 Before You Go" data-ar="📋 قبل المغادرة">📋 Before You Go</div>
+            <ul style="list-style:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:8px;">
+                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Check weather on your weather app before leaving</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Confirm your visit with the host the morning before</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Download offline maps for Al Qua'a (Google Maps or Maps.me)</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Top up your fuel — services are sparse out here</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Tell someone your destination and expected return time</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Charge your phone fully before you leave</li>
+            </ul>
+        </div>
+
+        <!-- Feature panels -->
         <section id="madaar-feature-panel" class="feature-panel">
+
+            <!-- Moon Cycle Tracker -->
             <div class="feature-card" id="moon-tracker-card">
-                <h2>Moon Cycle Tracker</h2>
-                <p class="subtitle">Check moon illumination to plan the best stargazing nights.</p>
+                <h2 data-en="Moon Cycle Tracker" data-ar="متتبع دورة القمر">Moon Cycle Tracker</h2>
+                <p class="subtitle" data-en="Check moon illumination to plan the best stargazing nights." data-ar="تحقق من إضاءة القمر لتخطيط أفضل ليالي مراقبة النجوم.">Check moon illumination to plan the best stargazing nights.</p>
                 <div class="input-group">
                     <label for="visit-date"><strong>Planned visit date:</strong></label>
                     <input type="date" id="visit-date">
@@ -48,12 +87,13 @@
                 </div>
             </div>
 
+            <!-- Ask a Local -->
             <div class="feature-card" id="ask-local-card">
-                <h2>Ask a Local</h2>
-                <p class="subtitle">Learn simple local tips about Al Qua'a before visiting.</p>
+                <h2 data-en="Ask a Local" data-ar="اسأل المحلي">Ask a Local</h2>
+                <p class="subtitle" data-en="Learn simple local tips about Al Qua'a before visiting." data-ar="تعلم نصائح محلية بسيطة عن القعا قبل زيارتها.">Learn simple local tips about Al Qua'a before visiting.</p>
                 <div class="input-group">
                     <input type="text" id="local-question" placeholder="Example: Do I need a 4x4?">
-                    <button class="mini-btn" id="ask-local-btn">Ask</button>
+                    <button class="mini-btn" id="ask-local-btn" data-en="Ask" data-ar="اسأل">Ask</button>
                 </div>
                 <div class="chip-container">
                     <button class="ask-chip" data-question="What is the best time to arrive?">Best arrival time</button>
@@ -63,19 +103,84 @@
                 </div>
                 <div class="answer-box" id="local-answer">Type a question or choose a quick question above.</div>
             </div>
+
         </section>
 
         <section class="controls" id="filter-controls"></section>
-
         <section id="hub-grid" class="grid-container"></section>
+
     </main>
 
     <script type="module" src="main.js"></script>
+
+    <!-- Is It Dark Yet? logic — device clock only, no internet required -->
+    <script>
+        function updateDarkStatus() {
+            const now = new Date();
+            const h = now.getHours() + now.getMinutes() / 60;
+            const month = now.getMonth(); // 0 = Jan
+            const isSummer = month >= 4 && month <= 8; // May–Sep
+
+            // Approximate twilight times for Al Qua'a (23.8°N, 55.7°E)
+            const sunset   = isSummer ? 19.25 : 17.75;
+            const civil    = isSummer ? 19.75 : 18.25;
+            const nautical = isSummer ? 20.25 : 18.75;
+            const astro    = isSummer ? 20.75 : 19.25;
+
+            let status, color, desc;
+
+            if (h >= astro || h < 4) {
+                status = "🌌 Astronomical Dark";
+                color  = "#10B981";
+                desc   = "Stargazing conditions are active.";
+            } else if (h >= nautical) {
+                status = "🌠 Nautical Twilight";
+                color  = "#E8A055";
+                desc   = "Getting dark. Stars appearing.";
+            } else if (h >= civil) {
+                status = "🌆 Civil Twilight";
+                color  = "#F59E0B";
+                desc   = "Sun just set. Sky still lit.";
+            } else if (h >= sunset) {
+                status = "🌅 Sunset";
+                color  = "#EF4444";
+                desc   = "Wait ~1–2 hrs for dark skies.";
+            } else {
+                status = "☀️ Daylight";
+                color  = "#94A3B8";
+                desc   = "Plan your visit for after sunset.";
+            }
+
+            document.getElementById("dark-status").textContent = status;
+            document.getElementById("dark-status").style.color = color;
+            document.getElementById("dark-dot").style.background = color;
+            document.getElementById("dark-desc").textContent = desc;
+        }
+
+        updateDarkStatus();
+        setInterval(updateDarkStatus, 60000); // refresh every minute
+    </script>
+
+    <!-- Arabic / English toggle — static strings only, no API -->
+    <script>
+        let currentLang = "en";
+        function toggleLang() {
+            currentLang = currentLang === "en" ? "ar" : "en";
+            document.getElementById("lang-btn").textContent = currentLang === "en" ? "عربي" : "English";
+            document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+            document.querySelectorAll("[data-en]").forEach(el => {
+                el.textContent = currentLang === "ar" ? el.dataset.ar : el.dataset.en;
+            });
+        }
+    </script>
+
+    <!-- Emergency numbers — always visible, no logic -->
     <div id="emergency-panel" style="position:fixed; right:16px; top:50%; transform:translateY(-50%); z-index:999; background:#1A0A0A; border:1px solid #EF4444; border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px; box-shadow:0 0 20px rgba(239,68,68,0.2);">
-    <span style="color:#EF4444; font-weight:800; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;">🚨 Emergency</span>
-    <a href="tel:999" style="color:#F8FAFC; text-decoration:none; font-weight:700; font-size:0.9rem;">Police <span style="color:#EF4444;">999</span></a>
-    <a href="tel:998" style="color:#F8FAFC; text-decoration:none; font-weight:700; font-size:0.9rem;">Ambulance <span style="color:#EF4444;">998</span></a>
-    <a href="tel:997" style="color:#F8FAFC; text-decoration:none; font-weight:700; font-size:0.9rem;">Civil Defence <span style="color:#EF4444;">997</span></a>
-</div>
+        <span style="color:#EF4444; font-weight:800; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;">🚨 Emergency</span>
+        <a href="tel:999" style="color:#F8FAFC; text-decoration:none; font-weight:700; font-size:0.9rem;">Police <span style="color:#EF4444;">999</span></a>
+        <a href="tel:998" style="color:#F8FAFC; text-decoration:none; font-weight:700; font-size:0.9rem;">Ambulance <span style="color:#EF4444;">998</span></a>
+        <a href="tel:997" style="color:#F8FAFC; text-decoration:none; font-weight:700; font-size:0.9rem;">Civil Defence <span style="color:#EF4444;">997</span></a>
+    </div>
+
 </body>
 </html>
