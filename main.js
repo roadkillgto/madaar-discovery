@@ -60,7 +60,11 @@ function createCard(data) {
                 ${escapeHTML(data.status)}
             </div>
             ${data.contactLink === "community-board"
-                ? `<button class="btn-contact action-btn" data-link="community-board">View Community Board</button>`
+                ? `<button class="btn-contact action-btn" data-link="community-board">📋 View Protocol</button>
+   <div class="community-notice" style="display:none; margin-top:16px; padding:16px; background:rgba(232,160,85,0.1); border-left:3px solid var(--accent-primary); border-radius:0 8px 8px 0; font-size:0.9rem; color:var(--text-secondary);">
+       <strong style="color:var(--accent-primary); display:block; margin-bottom:8px;">Dark Sky Protocol — Active</strong>
+       Participating farms: switch off non-essential perimeter lighting between 8 PM and 6 AM during designated stargazing events. Floodlights, decorative lighting, and vehicle headlights should be minimised. This protocol is voluntary and community-enforced.
+   </div>`
                : `<div class="contact-row">
                     <a href="${escapeHTML(data.contactLink)}" target="_blank" class="btn-contact btn-whatsapp">📲 WhatsApp</a>
                     <a href="sms:${escapeHTML(data.phone)}" class="btn-contact btn-sms">💬 SMS</a>
@@ -85,28 +89,26 @@ function renderCards(filterCategory = "all") {
 
     grid.innerHTML = filteredData.map(item => createCard(item)).join("");
 
-    // Modern Button Interaction Logic
+// Modern Button Interaction Logic
     document.querySelectorAll(".action-btn").forEach(button => {
         button.addEventListener("click", (e) => {
             const btn = e.currentTarget;
             const link = btn.getAttribute("data-link");
-            
-            // Visual feedback: Change button to green and update text
+
+            if (link === "community-board") {
+                const notice = btn.closest('.card').querySelector('.community-notice');
+                const isOpen = notice.style.display !== 'none';
+                notice.style.display = isOpen ? 'none' : 'block';
+                btn.textContent = isOpen ? '📋 View Protocol' : '✕ Close';
+                return;
+            }
+
             const originalText = btn.textContent;
-            btn.textContent = "Opening Secure Connection...";
+            btn.textContent = "Connecting...";
             btn.style.backgroundColor = "var(--signal-green)";
             btn.style.color = "#000";
             btn.style.borderColor = "var(--signal-green)";
-
-            // Simulate a brief loading state before the action
             setTimeout(() => {
-                if(link === "community-board") {
-                    alert("Demo: Routing to Community Board specific page.");
-                } else {
-                    alert(`Demo: In a live app, this opens WhatsApp routing to: ${link}`);
-                }
-                
-                // Reset button state
                 btn.textContent = originalText;
                 btn.style.backgroundColor = "";
                 btn.style.color = "";
