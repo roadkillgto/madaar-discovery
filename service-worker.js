@@ -2,7 +2,7 @@
 // Cache-first strategy: serves from cache instantly, falls back to network.
 // On first load this caches every asset. After that: zero internet needed.
 
-const CACHE_NAME = 'madaar-v1';
+const CACHE_NAME = 'madaar-v2';
 
 const ASSETS = [
   './',
