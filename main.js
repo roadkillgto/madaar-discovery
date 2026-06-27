@@ -2,9 +2,14 @@ import { CATEGORIES } from "./config.js";
 import { madaarSites, localGuidance } from "./data.js";
 import { initMoonPanel } from "./moon.js";
 
-// We no longer need the dial SVGs, so we only import escapeHTML from utils
 import { escapeHTML } from "./utils.js";
-
+// Register service worker — enables offline-first caching
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .catch(err => console.warn('SW registration failed:', err));
+  });
+}
 const grid = document.getElementById("hub-grid");
 const filterControls = document.getElementById("filter-controls");
 
