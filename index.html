@@ -40,7 +40,7 @@
 
             <!-- Night vision explanation -->
             <div style="font-size:0.75rem; color:#64748B; margin-top:0.75rem;">
-                White light ruins your eyes' adjustment to the dark. Switch to red to protect it.
+                <span data-en="White light ruins your eyes' adjustment to the dark. Switch to red to protect it." data-ar="الضوء الأبيض يضر بتكيف عينيك مع الظلام. استخدم الأحمر لحمايته.">White light ruins your eyes' adjustment to the dark. Switch to red to protect it.</span>
             </div>
 
         </div>
@@ -52,12 +52,12 @@
         <div style="background:var(--bg-surface); border:1px solid var(--glass-border); border-radius:16px; padding:20px 28px; margin-bottom:2rem;">
             <div style="font-weight:800; color:var(--accent-primary); margin-bottom:12px; font-size:1rem;" data-en="📋 Before You Go" data-ar="📋 قبل المغادرة">📋 Before You Go</div>
             <ul style="list-style:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:8px;">
-                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Check weather on your weather app before leaving</li>
-                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Confirm your visit with the host the morning before</li>
-                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Download offline maps for Al Qua'a (Google Maps or Maps.me)</li>
-                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Top up your fuel — services are sparse out here</li>
-                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Tell someone your destination and expected return time</li>
-                <li style="color:var(--text-secondary); font-size:0.9rem;">✓ Charge your phone fully before you leave</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;" data-en="✓ Check weather on your weather app before leaving" data-ar="✓ تحقق من الطقس على تطبيق الطقس قبل المغادرة">✓ Check weather on your weather app before leaving</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;" data-en="✓ Confirm your visit with the host the morning before" data-ar="✓ أكّد زيارتك مع المضيف صباح اليوم السابق">✓ Confirm your visit with the host the morning before</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;" data-en="✓ Download offline maps for Al Qua'a (Google Maps or Maps.me)" data-ar="✓ حمّل الخرائط بدون إنترنت للقعا (Google Maps أو Maps.me)">✓ Download offline maps for Al Qua'a (Google Maps or Maps.me)</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;" data-en="✓ Top up your fuel — services are sparse out here" data-ar="✓ املأ خزان الوقود — الخدمات شحيحة هناك">✓ Top up your fuel — services are sparse out here</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;" data-en="✓ Tell someone your destination and expected return time" data-ar="✓ أخبر شخصاً بوجهتك ووقت عودتك المتوقع">✓ Tell someone your destination and expected return time</li>
+                <li style="color:var(--text-secondary); font-size:0.9rem;" data-en="✓ Charge your phone fully before you leave" data-ar="✓ اشحن هاتفك بالكامل قبل المغادرة">✓ Charge your phone fully before you leave</li>
             </ul>
         </div>
 
@@ -69,20 +69,20 @@
                 <h2 data-en="Moon Cycle Tracker" data-ar="متتبع دورة القمر">Moon Cycle Tracker</h2>
                 <p class="subtitle" data-en="Check moon illumination to plan the best stargazing nights." data-ar="تحقق من إضاءة القمر لتخطيط أفضل ليالي مراقبة النجوم.">Check moon illumination to plan the best stargazing nights.</p>
                 <div class="input-group">
-                    <label for="visit-date"><strong>Planned visit date:</strong></label>
+                    <label for="visit-date"><strong data-en="Planned visit date:" data-ar="تاريخ الزيارة المخطط:">Planned visit date:</strong></label>
                     <input type="date" id="visit-date">
                 </div>
                 <div class="moon-grid">
                     <div class="moon-visual" id="moon-disc"></div>
                     <div class="moon-metrics">
-                        <div class="moon-metric"><span>Moon Phase</span><strong id="moon-phase">-</strong></div>
-                        <div class="moon-metric"><span>Illumination</span><strong id="moon-illumination">-</strong></div>
-                        <div class="moon-metric"><span>Quality</span><strong id="stargazing-quality" data-quality="">-</strong></div>
+                        <div class="moon-metric"><span data-en="Moon Phase" data-ar="طور القمر">Moon Phase</span><strong id="moon-phase">-</strong></div>
+                        <div class="moon-metric"><span data-en="Illumination" data-ar="الإضاءة">Illumination</span><strong id="moon-illumination">-</strong></div>
+                        <div class="moon-metric"><span data-en="Quality" data-ar="الجودة">Quality</span><strong id="stargazing-quality" data-quality="">-</strong></div>
                     </div>
                 </div>
                 <p id="moon-advice" class="advice-box"></p>
                 <div class="best-dates-container">
-                    <strong>Upcoming darker nights:</strong>
+                    <strong data-en="Upcoming darker nights:" data-ar="الليالي الأكثر ظلاماً القادمة:">Upcoming darker nights:</strong>
                     <ul id="best-dates-list" class="best-dates"></ul>
                 </div>
             </div>
@@ -96,10 +96,10 @@
                     <button class="mini-btn" id="ask-local-btn" data-en="Ask" data-ar="اسأل">Ask</button>
                 </div>
                 <div class="chip-container">
-                    <button class="ask-chip" data-question="What is the best time to arrive?">Best arrival time</button>
-                    <button class="ask-chip" data-question="What should I bring?">What to bring</button>
-                    <button class="ask-chip" data-question="Do I need a 4x4?">Need a 4x4?</button>
-                    <button class="ask-chip" data-question="How do I protect the dark sky?">Dark-sky rules</button>
+                    <button class="ask-chip" data-question="What is the best time to arrive?" data-en="Best arrival time" data-ar="أفضل وقت للوصول">Best arrival time</button>
+                    <button class="ask-chip" data-question="What should I bring?" data-en="What to bring" data-ar="ماذا أحمل معي">What to bring</button>
+                    <button class="ask-chip" data-question="Do I need a 4x4?" data-en="Need a 4x4?" data-ar="هل أحتاج دفع رباعي؟">Need a 4x4?</button>
+                    <button class="ask-chip" data-question="How do I protect the dark sky?" data-en="Dark-sky rules" data-ar="قواعد السماء المظلمة">Dark-sky rules</button>
                 </div>
                 <div class="answer-box" id="local-answer">Type a question or choose a quick question above.</div>
             </div>
