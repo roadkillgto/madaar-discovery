@@ -17,23 +17,12 @@ export const CATEGORIES = {
         group: "experience",
         blurb: "Non-emergency guidance for visitors."
     },
-    "Community Board": {
+   "Community Board": {
         icon: iconFlag(),
         group: "experience",
         blurb: "Community-wide notices and protocols."
-    },
-    "Planning Tools": {
-        icon: iconMoon(),
-        group: "tool",
-        blurb: "Plan your visit before you arrive."
-    },
-    "Local Guidance": {
-        icon: iconChat(),
-        group: "tool",
-        blurb: "Ask about the area before you go."
     }
 };
-
 export const ROAD_TYPES = {
     "car": "Normal Car OK",
     "4x4-recommended": "4x4 Recommended",
