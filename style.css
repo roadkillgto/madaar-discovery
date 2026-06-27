@@ -99,3 +99,9 @@ input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
 /* Connect Button */
 .btn-contact { width: 100%; padding: 14px; background-color: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--glass-border); border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.2s; }
 .btn-contact:hover { background-color: var(--accent-primary); color: var(--bg-base); border-color: var(--accent-primary); }
+
+/* --- Dual Contact Buttons --- */
+.contact-row { display: flex; gap: 10px; }
+.contact-row .btn-contact { flex: 1; text-align: center; text-decoration: none; display: block; padding: 14px; }
+.btn-whatsapp:hover { background-color: #10B981; color: #000; border-color: #10B981; }
+.btn-sms:hover { background-color: var(--accent-primary); color: var(--bg-base); border-color: var(--accent-primary); }
