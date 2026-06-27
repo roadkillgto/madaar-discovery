@@ -7,6 +7,8 @@ export const madaarSites = [
         description: "Overnight stargazing plot away from town lights. Includes traditional majlis seating and fresh camel milk in the morning.",
         status: "Available Tonight",
         roadType: "4x4-recommended",
+        capacity: "Up to 10 guests",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Al+Mansouri+Camel+Farm+Al+Qua%27a+Al+Ain",
         contactLink: "https://wa.me/971500000001", phone: "+971500000001"
     },
     {
@@ -17,6 +19,8 @@ export const madaarSites = [
         description: "Learn how a working camel farm operates. Good for families, students, and visitors interested in local heritage.",
         status: "Booking for Weekend",
         roadType: "car",
+        capacity: "Up to 25 guests",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Oasis+Heritage+Farms+Al+Qua%27a+Al+Ain",
         contactLink: "https://wa.me/971500000002", phone: "+971500000002"
     },
     {
