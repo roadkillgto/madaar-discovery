@@ -129,3 +129,12 @@ body.night-vision #night-vision-btn { background:#FF3B3B; color:#000; border-col
     #emergency-panel span:first-child { grid-column: 1 / -1; text-align: center; }
     #emergency-panel a { text-align: center; font-size: 0.8rem !important; }
 }
+
+/* --- Road Type Badge --- */
+.road-tag { background-color: transparent; border: 1px solid currentColor; }
+.road-tag[data-road="car"] { color: var(--signal-green); }
+.road-tag[data-road="4x4-recommended"] { color: var(--signal-amber); }
+.road-tag[data-road="4x4-required"] { color: var(--signal-red); }
+
+/* --- Map Button --- */
+.btn-map:hover { background-color: var(--signal-amber); color: #000; border-color: var(--signal-amber); }
